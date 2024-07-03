@@ -29,7 +29,7 @@ public class HelperUser extends HelperBase {
         type(By.name("email"), email);
 
 
-//        WebElement passwordInput = wd.findElement(By.xpath("//input[last()]"));
+//        WebElement passwordInput = wd.findElement(By.xpath("//input[last()]"));//type
 //        passwordInput.click();
 //        passwordInput.clear();
 //        passwordInput.sendKeys(password);
