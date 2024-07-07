@@ -45,6 +45,10 @@ public class HelperBase {
             alert.accept();
             return true;
         }
+        //click ok --->alert.accept();
+        //click cancel ---> alert.dismis();
+        //type into alert ---> alert.sendKeys("hello");
+
         return false;
     }
 
