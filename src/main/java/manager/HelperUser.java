@@ -3,9 +3,6 @@ package manager;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import javax.xml.namespace.QName;
 
 public class HelperUser extends HelperBase {
 
@@ -59,23 +56,18 @@ public class HelperUser extends HelperBase {
         click(By.xpath("//button[text()='Sign Out']"));
     }
 
-    public boolean isRegistered() {
-      return  isElementPresent(By.xpath("//button[text()='Sing Out']"));
+    public boolean isRegist() {
+        return isElementPresent(By.xpath("//button[text()='Sign Out']"));
     }
 
     public  void  submitRegist(){
         click(By.xpath("//button[text()='Registration']"));
     }
 
-    public void fillRegistrationForm(String email, String password) {
-        type(By.name("email"), email);
-        type(By.name("password"), password);
+//    public void fillRegistrationForm() {
+//        type(By.name("email"), email);
+//        type(By.name("password"), password);
+//
+//    }
 
-    }
-
-    public void fillRegistrationForm() {
-
-        type(By.name("email"), email);
-        type(By.name("password"), password);
-    }
 }
