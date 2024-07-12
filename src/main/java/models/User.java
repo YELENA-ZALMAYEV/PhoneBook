@@ -9,13 +9,11 @@ public class User {
         return this;
 
     }
-
     public User withPassword(String password) {
         this.password = password;
         return  this;
 
     }
-
     public String getEmail() {
         return email;
     }
