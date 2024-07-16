@@ -68,8 +68,9 @@ public class HelperUser extends HelperBase {
 
     public boolean displayWindow() {
        WebDriverWait wait = new WebDriverWait(wd,5);
-            boolean res =  wait.until(ExpectedConditions.textToBePresentInElement
-                    (wait.until(ExpectedConditions.textToBePresentInElement(wd.findElement(By.cssSelector("wd.contact-page_message__2qafk>h1")),"No Contacts here!"));
+            boolean res =  wait.until(ExpectedConditions
+                    .textToBePresentInElement(wd.findElement(By.cssSelector
+                            (".contact-page_message__2qafk>h1")),"No Contacts here!"));
             return  res;
    }
 

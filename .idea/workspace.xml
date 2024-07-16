@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33328376-8f4a-4292-81b9-12701112d065" name="Changes" comment="hw">
+    <list default="true" id="33328376-8f4a-4292-81b9-12701112d065" name="Changes" comment="cw">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,33 +60,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.LoginTests.executor": "Run",
-    "Gradle.LoginTests.loginSuccess.executor": "Run",
-    "Gradle.LoginTests.loginWrongEmail.executor": "Run",
-    "Gradle.PhoneBook [dependencies].executor": "Run",
-    "Gradle.RegistrationTests.RegistrationExUser.executor": "Run",
-    "Gradle.RegistrationTests.RegistrationSuccess.executor": "Run",
-    "Gradle.RegistrationTests.RegistrationWrongEmail.executor": "Run",
-    "Gradle.RegistrationTests.RegistrationWrongPassword.executor": "Run",
-    "Gradle.RegistrationTests.executor": "Run",
-    "Gradle.RegistrationTests.registrationIsSuccess.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.LoginTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginWrongEmail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PhoneBook [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.RegistrationExUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.RegistrationSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.RegistrationWrongEmail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.RegistrationWrongPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationIsSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.RegistrationTests.RegistrationSuccess">
     <configuration name="RegistrationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -254,7 +250,10 @@
       <workItem from="1720704010536" duration="3574000" />
       <workItem from="1720707652957" duration="431000" />
       <workItem from="1720708103153" duration="3201000" />
-      <workItem from="1720765675251" duration="4207000" />
+      <workItem from="1720765675251" duration="4262000" />
+      <workItem from="1720770414618" duration="1022000" />
+      <workItem from="1720776157360" duration="142000" />
+      <workItem from="1720782069919" duration="906000" />
     </task>
     <task id="LOCAL-00001" summary="create">
       <option name="closed" value="true" />
@@ -336,7 +335,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720714048126</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="cw">
+      <option name="closed" value="true" />
+      <created>1720770297589</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720770297590</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +364,7 @@
     <MESSAGE value="create" />
     <MESSAGE value="classwork" />
     <MESSAGE value="hw" />
-    <option name="LAST_COMMIT_MESSAGE" value="hw" />
+    <MESSAGE value="cw" />
+    <option name="LAST_COMMIT_MESSAGE" value="cw" />
   </component>
 </project>
