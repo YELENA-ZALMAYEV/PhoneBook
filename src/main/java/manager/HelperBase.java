@@ -1,5 +1,6 @@
 package manager;
 
+import models.User;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,16 @@ public class HelperBase {
         this.wd = wd;
     }
 
+    public boolean isLogged() {
+        return isElementPresent(By.xpath("//button[text()='Sign Out']"));
+    }
+
+    public  void  login(String email, String password) {
+        wd.findElement(By.name("email")).sendKeys(email);
+        wd.findElement(By.name("password")).sendKeys(password);
+        wd.findElement(By.name("login")).click();
+
+    }
 
     public  void  type(By locator, String text){
         WebElement element = wd.findElement(locator);
@@ -59,5 +70,12 @@ public class HelperBase {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void login(User user) {
+        wd.findElement(By.name("email")).sendKeys(user.getEmail());
+        wd.findElement(By.name("password")).sendKeys(user.getPassword());
+        wd.findElement(By.name("login")).click();
+
     }
 }

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+//import static sun.swing.SwingUtilities2.submit;
+
 public class HelperUser extends HelperBase {
 
     public HelperUser(WebDriver wd) {
@@ -15,7 +17,6 @@ public class HelperUser extends HelperBase {
     public void openLoginRegistrationForm() {
 //        WebElement loginTab = wd.findElement(By.cssSelector("a[href='/login']"));
 //        // xpath = //*a[text()='LOGIN']
-//
 //        loginTab.click();
 
         click(By.cssSelector("a[href='/login']"));
@@ -50,9 +51,7 @@ public class HelperUser extends HelperBase {
     }
 
 
-    public boolean isLogged() {
-        return isElementPresent(By.xpath("//button[text()='Sign Out']"));
-    }
+
 
     public void logout() {
         click(By.xpath("//button[text()='Sign Out']"));
@@ -74,5 +73,11 @@ public class HelperUser extends HelperBase {
             return  res;
    }
 
+    public void login(User user) {
+        openLoginRegistrationForm();
+        fillLoginRegistrationForm(user);
+        submitLogin();
+        isRegist();
+    }
 
 }
