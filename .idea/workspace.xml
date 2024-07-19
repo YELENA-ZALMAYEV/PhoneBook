@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33328376-8f4a-4292-81b9-12701112d065" name="Changes" comment="cw">
-      <change afterPath="$PROJECT_DIR$/src/main/java/manager/HelperContact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AddNewContactTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/RemoveContactTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperContact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddNewContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AddNewContactTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -67,10 +78,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.AddNewContactTests.addContSuccessAllFields.executor": "Run",
+    "Gradle.AddNewContactTests.addContSuccessAllReqField.executor": "Run",
     "Gradle.AddNewContactTests.addNewContactTest.executor": "Run",
+    "Gradle.AddNewContactTests.addNewContactWrongName.executor": "Run",
     "Gradle.AddNewContactTests.executor": "Run",
     "Gradle.LoginTests.executor": "Run",
     "Gradle.LoginTests.loginSuccess.executor": "Run",
+    "Gradle.LoginTests.loginSuccessModel.executor": "Run",
     "Gradle.LoginTests.loginWrongEmail.executor": "Run",
     "Gradle.PhoneBook [dependencies].executor": "Run",
     "Gradle.RegistrationTests.RegistrationExUser.executor": "Run",
@@ -79,6 +94,7 @@
     "Gradle.RegistrationTests.RegistrationWrongPassword.executor": "Run",
     "Gradle.RegistrationTests.executor": "Run",
     "Gradle.RegistrationTests.registrationIsSuccess.executor": "Run",
+    "Gradle.RemoveContactTests.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -120,7 +136,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AddNewContactTests.addNewContactTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AddNewContactTests.addContSuccessAllFields" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -133,7 +149,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.AddNewContactTests.addNewContactTest&quot;" />
+            <option value="&quot;tests.AddNewContactTests.addContSuccessAllFields&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,7 +160,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests.RegistrationExUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AddNewContactTests.addNewContactWrongName" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -157,7 +173,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTests.RegistrationExUser&quot;" />
+            <option value="&quot;tests.AddNewContactTests.addNewContactWrongName&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,7 +184,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests.RegistrationSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -181,7 +197,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTests.RegistrationSuccess&quot;" />
+            <option value="&quot;tests.LoginTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -192,7 +208,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests.RegistrationWrongPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RemoveContactTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -205,7 +221,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTests.RegistrationWrongPassword&quot;" />
+            <option value="&quot;tests.RemoveContactTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,10 +235,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.AddNewContactTests" />
-        <item itemvalue="Gradle.AddNewContactTests.addNewContactTest" />
-        <item itemvalue="Gradle.RegistrationTests.RegistrationSuccess" />
-        <item itemvalue="Gradle.RegistrationTests.RegistrationExUser" />
-        <item itemvalue="Gradle.RegistrationTests.RegistrationWrongPassword" />
+        <item itemvalue="Gradle.RemoveContactTests" />
+        <item itemvalue="Gradle.AddNewContactTests.addNewContactWrongName" />
+        <item itemvalue="Gradle.AddNewContactTests.addContSuccessAllFields" />
+        <item itemvalue="Gradle.LoginTests" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +283,13 @@
       <workItem from="1721141094909" duration="1108000" />
       <workItem from="1721208325538" duration="220000" />
       <workItem from="1721317941336" duration="3798000" />
-      <workItem from="1721321883715" duration="1358000" />
+      <workItem from="1721321883715" duration="1995000" />
+      <workItem from="1721365391968" duration="84000" />
+      <workItem from="1721365618392" duration="1699000" />
+      <workItem from="1721369871927" duration="5000" />
+      <workItem from="1721370689743" duration="18000" />
+      <workItem from="1721371530827" duration="3545000" />
+      <workItem from="1721375146508" duration="5598000" />
     </task>
     <task id="LOCAL-00001" summary="create">
       <option name="closed" value="true" />
@@ -365,7 +387,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721140335044</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="cw">
+      <option name="closed" value="true" />
+      <created>1721365240566</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721365240566</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

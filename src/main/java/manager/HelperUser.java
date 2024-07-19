@@ -50,9 +50,6 @@ public class HelperUser extends HelperBase {
         click(By.xpath("//button[text()='Login']"));
     }
 
-
-
-
     public void logout() {
         click(By.xpath("//button[text()='Sign Out']"));
     }
@@ -77,7 +74,7 @@ public class HelperUser extends HelperBase {
         openLoginRegistrationForm();
         fillLoginRegistrationForm(user);
         submitLogin();
-        isRegist();
+
     }
 
 }
