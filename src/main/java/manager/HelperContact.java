@@ -16,7 +16,8 @@ public class HelperContact extends  HelperBase{
     public void openAddContactForm() {
       //  click(By.xpath("//*[.='ADD']"));
         pause(500);
-        click(By.cssSelector("a[href='/add']"));
+        //click(By.cssSelector("a[href='/add']"));
+        click(By.xpath("//*[.='ADD']"));
     }
 
     public void fillAddingContactForm(Contact contact) {
@@ -43,9 +44,9 @@ public class HelperContact extends  HelperBase{
        // click(By.xpath("//button[.='Save']"));
     }
 
-    public boolean ContactIsExists(){
-        return isElementPresent(By.cssSelector(".contact-item_card__2SOIM"));
-    }
+  //  public boolean ContactIsExists(){
+  //      return isElementPresent(By.cssSelector(".contact-item_card__2SOIM"));
+  //  }
 
     public boolean isConAddedByMame(String name) {//check all with name
      List<WebElement> list = wd.findElements(By.cssSelector("h2"));
@@ -70,6 +71,14 @@ public class HelperContact extends  HelperBase{
 
     public boolean isAddPageStillOnDisplayed() {
         return isElementPresent(By.cssSelector("a.active[href='/add']"));
+    }
+
+    public void openContacts() {
+        click(By.cssSelector("a[href='/contacts']"));
+    }
+
+    public void clickOnButtonRemove() {
+        click(By.cssSelector("button[.()='Remove']"));
     }
 }
 

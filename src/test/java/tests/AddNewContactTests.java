@@ -1,5 +1,6 @@
 package tests;
 
+
 import models.Contact;
 import models.User;
 import org.testng.Assert;
@@ -15,18 +16,25 @@ public class AddNewContactTests extends TestBase{
 
 @BeforeClass
      public  void preConditions(){
-        if(app.getHelperUser().isLogged()) {
+        if(!app.getHelperUser().isLogged()) {
             app.getHelperUser().login(new User().withEmail("pap@gmail.com").withPassword("@1234567Qq@"));
 
         }
+   }
+   @BeforeMethod
+   public void refresh(){
+    if(app.getHelperContact().isAddPageStillOnDisplayed()){
+        app.getHelperContact().refresh();
     }
+   }
 
        @Test
 public  void  addContSuccessAllFields(){
      //   int i = new Random().nextInt(100)+1000;
         int i = (int) (System.currentTimeMillis() / 1000)% 3600;
-        Contact contact = Contact.builder()
-                .name("senia")
+
+           Contact contact = Contact.builder()
+                .name("Asenia")
                 .lastName("oroz"+i)
                 .phone("1234567891"+i)
                 .email("wer"+i+"@Gmail.com")
@@ -40,6 +48,7 @@ public  void  addContSuccessAllFields(){
            Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
            Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
 
+
     }
 
     @Test
@@ -47,7 +56,7 @@ public  void  addContSuccessAllFields(){
         int i = new Random().nextInt(100)+1000;
 
         Contact contact = Contact.builder()
-                .name("senia")
+                .name("Bsenia")
                 .lastName("oroz")
                 .phone("1234457891"+i )
                 .email("wer"+i+"@Gmail.com")
@@ -66,7 +75,7 @@ public  void  addContSuccessAllFields(){
     public void addNewContactWrongName(){
         Contact contact = Contact.builder()
                 .name("")
-                .lastName("oroz")
+                .lastName("Coroz")
                 .phone("1234567891")
                 .email("wer@Gmail.com")
                 .address("Tel Aviv")
@@ -84,7 +93,7 @@ public  void  addContSuccessAllFields(){
     @Test
     public void addNewContactWrongLastName(){
         Contact contact = Contact.builder()
-                .name("senia")
+                .name("Dsenia")
                 .lastName("")
                 .phone("1234567891")
                 .email("wer@Gmail.com")
@@ -100,7 +109,7 @@ public  void  addContSuccessAllFields(){
     @Test
     public void addNewContactWrongAddress(){
         Contact contact = Contact.builder()
-                .name("senia")
+                .name("Fsenia")
                 .lastName("oroz")
                 .phone("1234567891")
                 .email("wer@Gmail.com")
@@ -116,7 +125,7 @@ public  void  addContSuccessAllFields(){
     @Test
     public void addNewContactWrongPhone(){
         Contact contact = Contact.builder()
-                .name("senia")
+                .name("Gsenia")
                 .lastName("oroz")
                 .phone("")
                 .email("wer@Gmail.com")
@@ -133,7 +142,7 @@ public  void  addContSuccessAllFields(){
     @Test
     public void addNewContactWrongEmail(){
         Contact contact = Contact.builder()
-                .name("senia")
+                .name("Wsenia")
                 .lastName("oroz")
                 .phone("1234567891")
                 .email("werGmail.com")

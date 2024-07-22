@@ -54,14 +54,14 @@ public class HelperUser extends HelperBase {
         click(By.xpath("//button[text()='Sign Out']"));
     }
 
-    public boolean isRegist() {
+    public boolean isLogged() {
         return isElementPresent(By.xpath("//button[text()='Sign Out']"));
     }
 
     public  void  submitRegist(){
         click(By.xpath("//button[text()='Registration']"));
     }
-
+  //isNoContactsHereDisplayed
     public boolean displayWindow() {
        WebDriverWait wait = new WebDriverWait(wd,5);
             boolean res =  wait.until(ExpectedConditions
