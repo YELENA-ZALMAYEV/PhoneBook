@@ -78,7 +78,7 @@ public class HelperContact extends  HelperBase{
     }
 
     public void clickOnButtonRemove() {
-        click(By.cssSelector("button[.()='Remove']"));
+        click(By.xpath("//button[normalize-space()='Remove']"));
     }
 }
 
