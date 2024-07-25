@@ -18,15 +18,17 @@ public class AddNewContactTests extends TestBase{
      public  void preConditions(){
         if(!app.getHelperUser().isLogged()) {
             app.getHelperUser().login(new User().withEmail("pap@gmail.com").withPassword("@1234567Qq@"));
+ }
+   }
 
-        }
-   }
-   @BeforeMethod
-   public void refresh(){
-    if(app.getHelperContact().isAddPageStillOnDisplayed()){
-        app.getHelperContact().refresh();
-    }
-   }
+    //pause befor seve contact + disc (neme of test) + add method Newclear in HelperBase
+
+//   @BeforeMethod
+//   public void refresh(){
+//    if(app.getHelperContact().isAddPageStillOnDisplayed()){
+//        app.getHelperContact().refresh();
+//    }
+//   }
 
        @Test
 public  void  addContSuccessAllFields(){
@@ -39,11 +41,12 @@ public  void  addContSuccessAllFields(){
                 .phone("1234567891"+i)
                 .email("wer"+i+"@Gmail.com")
                 .address("Tel Aviv")
-                .description("new")
+                .description("all fields")
                 .build();
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
+      //  app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
            Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
            Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
@@ -65,6 +68,8 @@ public  void  addContSuccessAllFields(){
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
+     //   app.getHelperContact().pause(1500);
+        app.getHelperContact().getScreen("src/test/screenshots/screen-"+i+".png");
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
         Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
@@ -84,6 +89,7 @@ public  void  addContSuccessAllFields(){
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
+     //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
 
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
@@ -103,6 +109,7 @@ public  void  addContSuccessAllFields(){
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
+     //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
     }
@@ -119,6 +126,7 @@ public  void  addContSuccessAllFields(){
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
+     //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
     }
@@ -130,17 +138,18 @@ public  void  addContSuccessAllFields(){
                 .phone("")
                 .email("wer@Gmail.com")
                 .address("Tel Aviv")
-                .description("new")
+                .description("wrong phone")
                 .build();
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
+     //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
         Assert.assertTrue(app.getHelperContact().isAlertPresent(" Phone not valid: Phone number must contain only digits! And length min 10, max 15!"));
     }
     @Test
-    public void addNewContactWrongEmail(){
+    public void addNewContactWrongEmail(){ //bug
         Contact contact = Contact.builder()
                 .name("Wsenia")
                 .lastName("oroz")
@@ -152,6 +161,7 @@ public  void  addContSuccessAllFields(){
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
+    //    app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
         Assert.assertTrue(app.getHelperContact().isAlertPresent("Email not valid"));
