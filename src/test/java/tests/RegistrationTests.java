@@ -24,10 +24,14 @@ public class RegistrationTests extends TestBase{
         User user = new User()
                 .withEmail("lola"+i+"@gmail.com")
                 .withPassword("qaQA123$%^");
+        logger.info("Tests run with data: --->"+user.toString());
 
         app.getHelperUser().openLoginRegistrationForm();
+        logger.info("openLoginRegistrationForm invoked");
         app.getHelperUser().fillLoginRegistrationForm(user);
+        logger.info("fillLoginRegistrationForm invoked");
         app.getHelperUser().submitRegist();
+        logger.info("submitRegist invoked");
       Assert.assertTrue(app.getHelperUser().isLogged());
       Assert.assertTrue(app.getHelperUser().displayWindow());
 
@@ -35,6 +39,7 @@ public class RegistrationTests extends TestBase{
     @Test //(description = *Bug report *23456 Fixed*)
     public  void RegistrationWrongEmail( ){
         User user = new User().withEmail("lolagmail.com").withPassword("qaQA123$%^");
+        logger.info("Tests run with data: --->"+user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegist();
@@ -43,6 +48,7 @@ public class RegistrationTests extends TestBase{
     @Test //(description = *Bug report *23456 Fixed*)
     public  void RegistrationWrongPassword( ){
         User user = new User().withEmail("lola@gmail.com").withPassword("q123$%^");
+        logger.info("Tests run with data: --->"+user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegist();
@@ -51,6 +57,7 @@ public class RegistrationTests extends TestBase{
     @Test //(description = *Bug report *23456 Fixed*)
     public  void RegistrationExUser( ){
         User user = new User().withEmail("pap@gmail.com").withPassword("@1234567Qq@");
+        logger.info("Tests run with data: --->"+user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegist();

@@ -69,7 +69,7 @@ public  void  addContSuccessAllFields(){
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
      //   app.getHelperContact().pause(1500);
-        app.getHelperContact().getScreen("src/test/screenshots/screen-"+i+".png");
+        app.getHelperContact().getScreen("src/test/screenshots/screen-"+i+".png"); //randome for name
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
         Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
