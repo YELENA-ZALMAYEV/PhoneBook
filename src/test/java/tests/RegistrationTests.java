@@ -36,6 +36,7 @@ public class RegistrationTests extends TestBase{
       Assert.assertTrue(app.getHelperUser().displayWindow());
 
     }
+
     @Test //(description = *Bug report *23456 Fixed*)
     public  void RegistrationWrongEmail( ){
         User user = new User().withEmail("lolagmail.com").withPassword("qaQA123$%^");
@@ -45,15 +46,17 @@ public class RegistrationTests extends TestBase{
         app.getHelperUser().submitRegist();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password format"));
     }
+
     @Test //(description = *Bug report *23456 Fixed*)
-    public  void RegistrationWrongPassword( ){
+    public  void RegistrationWrongPassword( ) {
         User user = new User().withEmail("lola@gmail.com").withPassword("q123$%^");
-        logger.info("Tests run with data: --->"+user.toString());
+        logger.info("Tests run with data: --->" + user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegist();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password format"));
     }
+
     @Test //(description = *Bug report *23456 Fixed*)
     public  void RegistrationExUser( ){
         User user = new User().withEmail("pap@gmail.com").withPassword("@1234567Qq@");
