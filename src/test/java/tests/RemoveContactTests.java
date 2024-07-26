@@ -2,6 +2,7 @@ package tests;
 
 import models.User;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -24,13 +25,15 @@ public class RemoveContactTests extends TestBase{
        // app.getHelperContact().click(By.cssSelector("div[class='contact-page_leftdiv__yhyke'] div div:nth-child(1)"));
         //   app.getHelperContact().isConAddedByMame("Asenia");
       //  app.getHelperContact().clickOnButtonRemove();
-        //Assert.
+        Assert.assertEquals(app.getHelperContact().removeOneContact(),1);
         //Assert list.size less by one
 
 
     }
     @Test
     public  void removeAllContacts(){
+        app.getHelperContact().removeAllContacts();
+        Assert.assertTrue(app.getHelperUser().isNoCotactsHereDisplayed());
         //Assert "No contacts here!"
     }
 }

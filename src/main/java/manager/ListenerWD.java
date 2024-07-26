@@ -18,13 +18,13 @@ public class ListenerWD extends AbstractWebDriverEventListener {
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
         super.beforeFindBy(by, element, driver);
-        logger.info("");
+        logger.info("before find element:" + by);
     }
 
     @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
         super.afterFindBy(by, element, driver);
-        logger.info("");
+        logger.info("element is find:"+by);
     }
 
     @Override
@@ -36,31 +36,31 @@ public class ListenerWD extends AbstractWebDriverEventListener {
     @Override
     public void afterGetText(WebElement element, WebDriver driver, String text) {
         super.afterGetText(element, driver, text);
-        logger.info("");
+        logger.info("got the text successful");
     }
 
     @Override
     public void beforeAlertAccept(WebDriver driver) {
         super.beforeAlertAccept(driver);
-        logger.info("");
+
     }
 
     @Override
     public void afterAlertAccept(WebDriver driver) {
         super.afterAlertAccept(driver);
-        logger.info("");
+
     }
 
     @Override
     public void beforeClickOn(WebElement element, WebDriver driver) {
         super.beforeClickOn(element, driver);
-        logger.info("");
+        logger.info("start method click");
     }
 
     @Override
     public void afterClickOn(WebElement element, WebDriver driver) {
         super.afterClickOn(element, driver);
-        logger.info("done mwthod clik");
+        logger.info("done method clik");
     }
 
     @Override

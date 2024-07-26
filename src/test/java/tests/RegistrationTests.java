@@ -33,7 +33,8 @@ public class RegistrationTests extends TestBase{
         app.getHelperUser().submitRegist();
         logger.info("submitRegist invoked");
       Assert.assertTrue(app.getHelperUser().isLogged());
-      Assert.assertTrue(app.getHelperUser().displayWindow());
+    //  Assert.assertTrue(app.getHelperUser().displayWindow());
+      Assert.assertTrue(app.getHelperUser().isNoCotactsHereDisplayed());
 
     }
 
