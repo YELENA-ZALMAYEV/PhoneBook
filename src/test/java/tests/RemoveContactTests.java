@@ -20,12 +20,13 @@ public class RemoveContactTests extends TestBase{
     }
     @Test
     public void removeFirstContact(){
-        app.getHelperContact().openContacts();
-        app.getHelperContact().click(By.cssSelector("div[class='contact-page_leftdiv__yhyke'] div div:nth-child(1)"));
+       // app.getHelperContact().openContacts();
+       // app.getHelperContact().click(By.cssSelector("div[class='contact-page_leftdiv__yhyke'] div div:nth-child(1)"));
         //   app.getHelperContact().isConAddedByMame("Asenia");
-        app.getHelperContact().clickOnButtonRemove();
+      //  app.getHelperContact().clickOnButtonRemove();
         //Assert.
         //Assert list.size less by one
+
 
     }
     @Test

@@ -37,8 +37,9 @@ public class HelperUser extends HelperBase {
 //        passwordInput.clear();
 //        passwordInput.sendKeys(password);
 
-        type(By.xpath("//input[last()]"), password);
+       type(By.xpath("//input[last()]"), password);
 
+        //   click(By.cssSelector("a[href='/login']"));
     }
 
     public void fillLoginRegistrationForm(User user){
