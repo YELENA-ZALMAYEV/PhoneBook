@@ -1,8 +1,10 @@
 package tests;
 
+import manager.DataProviderUser;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase {
@@ -15,8 +17,8 @@ public class LoginTests extends TestBase {
         }
     }
 
-    @Test
-    public void loginSuccess(){
+    @Test (dataProvider = "loginData", dataProviderClass = DataProviderUser.class)
+    public void loginSuccess(String email, String password){
 //        User user = new User().setEmail("pap@gmail.com").setPassword("@1234567Qq@");
 //        user.setEmail("pap@gmail.com");
 //        user.setPassword("@1234567Qq@");
@@ -25,7 +27,7 @@ public class LoginTests extends TestBase {
         logger.info("Test data ---> email: 'pap@gmail.com' & password '@1234567Qq@'");
 
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm("pap@gmail.com","@1234567Qq@"); //(new User().setEmail("pap@gmail.com").setPassword("@1234567Qq@");
+        app.getHelperUser().fillLoginRegistrationForm(email,password); //(new User().setEmail("pap@gmail.com").setPassword("@1234567Qq@");
         app.getHelperUser().submitLogin();
 
 //        Assert.assertEquals();
@@ -38,41 +40,44 @@ public class LoginTests extends TestBase {
         logger.info("Assert check is element button 'Sing out' present");
     }
 
-    @Test
-    public void loginSuccessModel() {
+
+    @Test (dataProvider = "loginsModels", dataProviderClass = DataProviderUser.class)
+    public void loginSuccessModel(User user) {
+        logger.info("Start loginSuccessModelTest");
         logger.info("Test data ---> email: 'pap@gmail.com' & password '@1234567Qq@'");
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm("pap@gmail.com", "@1234567Qq@");
+        app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLogin();
         Assert.assertTrue(app.getHelperUser().isLogged());
         logger.info("Assert check is element button 'Sing out' present");
+        logger.info("Finish login Success Model Test");
     }
 
-    @Test
-    public  void  loginWrongEmail(){
+    @Test (dataProvider = "loginWrongEmail", dataProviderClass = DataProviderUser.class)
+    public  void  loginWrongEmail(User user) {
         logger.info("Test data ---> email: 'papgmail.com' & password '@1234567Qq@'");
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm("papgmail.com","@1234567Qq@");
+        app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLogin();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password"));
         logger.info("Assert check is alert present with error text 'Wrong email or password'");
     }
 
-    @Test
-    public  void  LoginWrongPassword(){
+    @Test (dataProvider = "loginWrongPassword", dataProviderClass = DataProviderUser.class)
+    public  void  LoginWrongPassword(User user){
         logger.info("Test data ---> email: 'pap@gmail.com' & password '@1234567q@'");
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm("pap@gmail.com","@1234567q@");
+        app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLogin();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password"));
         logger.info("Assert check is alert present with error text 'Wrong email or password'");
     }
 
-    @Test
-    public  void  loginUnregisteredUser(){
+    @Test (dataProvider = "loginUnregisteredUser", dataProviderClass = DataProviderUser.class)
+    public  void  loginUnregisteredUser(User user){
         logger.info("Test data ---> email: 'qqap@gmail.com' & password 'qqq34567Qq@'");
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm("qqap@gmail.com","qqq34567Qq@");
+        app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLogin();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password"));
         logger.info("Assert check is alert present with error text 'Wrong email or password'");
