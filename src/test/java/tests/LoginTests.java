@@ -41,6 +41,19 @@ public class LoginTests extends TestBase {
     }
 
 
+    @Test (dataProvider = "loginFile", dataProviderClass = DataProviderUser.class)
+    public void loginSuccessModelDP(User user) {
+        logger.info("Start loginSuccessModelTest");
+        logger.info("Test data ---> " + user.toString());
+
+        app.getHelperUser().openLoginRegistrationForm();
+        app.getHelperUser().fillLoginRegistrationForm(user);
+        app.getHelperUser().submitLogin();
+        Assert.assertTrue(app.getHelperUser().isLogged());
+        logger.info("Assert check is element button 'Sing out' present");
+        logger.info("Finish login Success Model Test");
+    }
+
     @Test (dataProvider = "loginsModels", dataProviderClass = DataProviderUser.class)
     public void loginSuccessModel(User user) {
         logger.info("Start loginSuccessModelTest");

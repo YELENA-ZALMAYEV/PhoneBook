@@ -7,20 +7,22 @@ import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.Iterator;
 import java.util.Random;
 
 import static tests.TestBase.app;
 
-public class AddNewContactTests extends TestBase{
+public class AddNewContactTests extends TestBase {
 
-@BeforeClass
-     public  void preConditions(){
-        if(!app.getHelperUser().isLogged()) {
+    @BeforeClass
+    public void preConditions() {
+        if (!app.getHelperUser().isLogged()) {
             app.getHelperUser().login(new User().withEmail("pap@gmail.com").withPassword("@1234567Qq@"));
- }
-   }
+        }
+    }
 
     //pause befor seve contact + disc (neme of test) + add method Newclear in HelperBase
 
@@ -31,10 +33,10 @@ public class AddNewContactTests extends TestBase{
 //    }
 //   }
 
-       @Test (dataProvider = "addNewContactSuccess", dataProviderClass = DataProviderContact.class)
-     public  void  addContSuccessAllFields(Contact contact){
-     //   int i = new Random().nextInt(100)+1000;
-      //  int i = (int) (System.currentTimeMillis() / 1000)% 3600;
+    @Test(dataProvider = "addNewContactSuccess", dataProviderClass = DataProviderContact.class)
+    public void addContSuccessAllFields(Contact contact) {
+        //   int i = new Random().nextInt(100)+1000;
+        //  int i = (int) (System.currentTimeMillis() / 1000)% 3600;
 //
 //           Contact contact = Contact.builder()
 //                .name("Asenia")
@@ -47,17 +49,30 @@ public class AddNewContactTests extends TestBase{
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
-      //  app.getHelperContact().pause(1500);
+        //  app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
-           Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
-           Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
+        Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
+        Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
 
 
     }
 
-    @Test (dataProvider = "addContSuccessAllReqField", dataProviderClass = DataProviderContact.class)
-    public  void  addContSuccessAllReqField(Contact contact){
-      //  int i = new Random().nextInt(100)+1000;
+    @Test(dataProvider = "contactCSV", dataProviderClass = DataProviderContact.class)
+    public void addContSuccessAllFieldsCSV(Contact contact) {
+
+        logger.info("Test-->" + contact.toString());
+        app.getHelperContact().openAddContactForm();
+        app.getHelperContact().fillAddingContactForm(contact);
+        app.getHelperContact().saveAddingContactForm();
+        Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
+        Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
+
+
+    }
+
+    @Test(dataProvider = "addContSuccessAllReqField", dataProviderClass = DataProviderContact.class)
+    public void addContSuccessAllReqField(Contact contact) {
+        //  int i = new Random().nextInt(100)+1000;
 
 //        Contact contact = Contact.builder()
 //                .name("Bsenia")
@@ -69,8 +84,8 @@ public class AddNewContactTests extends TestBase{
         logger.info(" Mathod add Contact Success All Req Field started");
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
-     //   app.getHelperContact().pause(1500);
-      //  app.getHelperContact().getScreen("src/test/screenshots/screen-"+i+".png"); //randome for name
+        //   app.getHelperContact().pause(1500);
+        //  app.getHelperContact().getScreen("src/test/screenshots/screen-"+i+".png"); //randome for name
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isConAddedByMame(contact.getName()));
         Assert.assertTrue(app.getHelperContact().isConAddedByPhone(contact.getPhone()));
@@ -79,7 +94,7 @@ public class AddNewContactTests extends TestBase{
 
     //NegativeTest
     @Test
-    public void addNewContactWrongName(){
+    public void addNewContactWrongName() {
         Contact contact = Contact.builder()
                 .name("")
                 .lastName("Coroz")
@@ -91,7 +106,7 @@ public class AddNewContactTests extends TestBase{
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
-     //   app.getHelperContact().pause(1500);
+        //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
 
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
@@ -99,7 +114,7 @@ public class AddNewContactTests extends TestBase{
     }
 
     @Test
-    public void addNewContactWrongLastName(){
+    public void addNewContactWrongLastName() {
         Contact contact = Contact.builder()
                 .name("Dsenia")
                 .lastName("")
@@ -111,13 +126,14 @@ public class AddNewContactTests extends TestBase{
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
-     //   app.getHelperContact().pause(1500);
+        //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
         logger.info(" Mathod Wrong Last Name finished");
     }
+
     @Test
-    public void addNewContactWrongAddress(){
+    public void addNewContactWrongAddress() {
         Contact contact = Contact.builder()
                 .name("Fsenia")
                 .lastName("oroz")
@@ -129,12 +145,13 @@ public class AddNewContactTests extends TestBase{
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
-     //   app.getHelperContact().pause(1500);
+        //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
     }
-    @Test (dataProvider = "wrongPhone", dataProviderClass = DataProviderContact.class)
-    public void addNewContactWrongPhone(Contact contact){
+
+    @Test(dataProvider = "wrongPhone", dataProviderClass = DataProviderContact.class)
+    public void addNewContactWrongPhone(Contact contact) {
 //        Contact contact = Contact.builder()
 //                .name("Gsenia")
 //                .lastName("oroz")
@@ -146,13 +163,14 @@ public class AddNewContactTests extends TestBase{
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
-     //   app.getHelperContact().pause(1500);
+        //   app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
         Assert.assertTrue(app.getHelperContact().isAlertPresent(" Phone not valid: Phone number must contain only digits! And length min 10, max 15!"));
     }
+
     @Test
-    public void addNewContactWrongEmail(){ //bug
+    public void addNewContactWrongEmail() { //bug
         Contact contact = Contact.builder()
                 .name("Wsenia")
                 .lastName("oroz")
@@ -164,11 +182,17 @@ public class AddNewContactTests extends TestBase{
 
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillAddingContactForm(contact);
-    //    app.getHelperContact().pause(1500);
+        //    app.getHelperContact().pause(1500);
         app.getHelperContact().saveAddingContactForm();
         Assert.assertTrue(app.getHelperContact().isAddPageStillOnDisplayed());
         Assert.assertTrue(app.getHelperContact().isAlertPresent("Email not valid"));
 
 
     }
+
+//    @DataProvider
+//    public Iterator <Object[]> loginFile (){
+//
+//    }
+//}
 }
