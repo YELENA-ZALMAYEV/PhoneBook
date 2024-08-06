@@ -63,7 +63,7 @@ public class HelperBase {
         System.out.println(alert.getText());
         if (alert!= null&&alert.getText().contains(message)){
             System.out.println(alert.getText());
-            pause(50);
+            pause(500);
             alert.accept();
             return true;
         }
