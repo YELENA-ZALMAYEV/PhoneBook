@@ -57,7 +57,7 @@ public class AddNewContactTests extends TestBase {
 
     }
 
-    @Test(dataProvider = "contactCSV", dataProviderClass = DataProviderContact.class)
+    @Test(dataProvider = "contactCSV", dataProviderClass = DataProviderContact.class)      //file data csv + DPContact
     public void addContSuccessAllFieldsCSV(Contact contact) {
 
         logger.info("Test-->" + contact.toString());

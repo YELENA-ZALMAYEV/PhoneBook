@@ -16,7 +16,7 @@ public class HelperContact extends  HelperBase{
 
     public void openAddContactForm() {
       //  click(By.xpath("//*[.='ADD']"));
-        pause(500);
+        pause(5);
         //click(By.cssSelector("a[href='/add']"));
         click(By.xpath("//*[.='ADD']"));
     }
@@ -94,7 +94,7 @@ public class HelperContact extends  HelperBase{
     private void removeContact() {
         click(By.cssSelector(".contact-item_card__2SOIM"));
         click(By.xpath("//button[text()='Remove']"));
-        pause(1000);
+        pause(10);
     }
 
     private int countOfContacts() {
@@ -131,7 +131,7 @@ public class HelperContact extends  HelperBase{
         openAddContactForm();
         fillAddingContactForm(contact);
         saveAddingContactForm();
-        pause(500);
+        pause(5);
     }
 }
 
